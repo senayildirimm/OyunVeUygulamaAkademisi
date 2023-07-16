@@ -146,7 +146,7 @@ https://miro.com/app/board/uXjVM9s_u0s=/?share_link_id=114702148702
 * **Sprint Review:** Alınan kararlar: Geçmiş işlemleri kaydının tutulmasına işlemi yapıldı. İki değişkenli denklem çözümü eklendi. Dark ve light tema eklendi. Uygulama için logo tasarımı yapıldı. **Sprint Review Katılımcıları :** Takımın tamamı katılmıştır.
 
 * Sprint Retrospective:
-  * Takım üyelerinin gelecek sprintlerde daha aktif olması gerektiği ortak fikrine varılmıştır.
+  * Bütün takım üyeleri olarak birbirimizi tebrik ettik ve süreci kutladık.
     
 
 # Product Backlog URL
