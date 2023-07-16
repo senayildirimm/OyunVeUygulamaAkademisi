@@ -29,11 +29,6 @@ class _HomePageState extends State<HomePage> {
       output = "0";
       isResultShown = false;
     }
-
-    if (numberKey == "trig"){
-
-    }
-
     if (numberKey == "AC") {
       numberInput = 0;
       operator = "";
@@ -69,7 +64,8 @@ class _HomePageState extends State<HomePage> {
     } else if (numberKey == "+" ||
         numberKey == "/" ||
         numberKey == "*" ||
-        numberKey == "-") {
+        numberKey == "-" ||
+        numberKey == "gcm") {
       numberInput = double.parse(output);
       operator = numberKey;
       output = "0";
@@ -105,6 +101,12 @@ class _HomePageState extends State<HomePage> {
           firebaseOutput += " = $output";
           addCalculationToDatabase(firebaseOutput);
           break;
+        case "gcm":
+          firebaseOutput = "${numberInput}GCM${double.parse(output)}";
+          output = calculateGCM(numberInput.toInt(), double.parse(output).toInt()).toString();
+          firebaseOutput += " = $output";
+          addCalculationToDatabase(firebaseOutput);
+          break;
       }
 
       if (double.tryParse(output) != null) {
@@ -133,15 +135,18 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
-        backgroundColor: const Color.fromRGBO(246,153,6, 1),
+        backgroundColor: const Color.fromRGBO(215,151,94,1),
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Color.fromRGBO(211,207,199,1),
               ),
-              child: Text('Quick Math'),
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(80, 50, 50, 60),
+                child: Text('Quick Math', style: TextStyle(fontStyle: FontStyle.italic,) ),
+              ),
             ),
             ListTile(
               title: const Text('Log Out'),
@@ -171,7 +176,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      backgroundColor: Colors.black,
+      backgroundColor: Color.fromRGBO(211,207,199,1),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
@@ -214,7 +219,7 @@ class _HomePageState extends State<HomePage> {
               iconButton(buttonPressed, "log"),
               iconButton(buttonPressed, "x^n"),
               iconButton(buttonPressed, "√"),
-              trigButton(buttonPressed),
+              gcmButton(buttonPressed),
             ],
           ),
           const SizedBox(
@@ -274,58 +279,34 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class trigButton extends StatefulWidget {
+class gcmButton extends StatelessWidget {
   Function buttonPressed;
-  trigButton(this.buttonPressed, {Key? key}) : super(key: key);
+  gcmButton(this.buttonPressed, {Key? key}) : super(key: key);
 
-  @override
-  State<trigButton> createState() => _trigButtonState();
-}
-
-class _trigButtonState extends State<trigButton> {
   bool isHovered = false;
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (event) {
-        setState(() {
-          isHovered = true;
-        });
-      },
-      onExit: (event) {
-        setState(() {
-          isHovered = false;
-        });
-      },
-      child: ElevatedButton(
-        onPressed: () {
-          widget.buttonPressed("trig");
-        },
-        style: ElevatedButton.styleFrom(
-          backgroundColor: isHovered ? Colors.yellow : const Color.fromRGBO(246, 153, 6, 1),
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+          backgroundColor: const Color.fromRGBO(215,151,94,1),
           minimumSize: const Size.fromRadius(40.0),
           shape: const CircleBorder(),
-          padding: const EdgeInsets.all(20),
-        ),
-        child: const Text(
-          'Trig',
-          style: TextStyle(
+          padding: const EdgeInsets.all(20)),
+      onPressed: () {
+        buttonPressed("gcm");
+      },
+      child:const  Text(
+        "GCM",
+        style: TextStyle(
             fontSize: 20,
             fontFamily: 'Helvetica',
-            color: Colors.white,
-          ),
+            color: Colors.white
         ),
       ),
     );
   }
 }
-
-
-
-
-
-
 
 class equalButton extends StatelessWidget {
   Function buttonPressed;
@@ -337,7 +318,7 @@ class equalButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          backgroundColor: const Color.fromRGBO(246,153,6, 1),
+          backgroundColor: const Color.fromRGBO(215,151,94,1),
           minimumSize: const Size.fromRadius(40.0),
           shape: const CircleBorder(),
           padding: const EdgeInsets.all(20)),
@@ -369,15 +350,15 @@ class commaButton extends StatelessWidget {
         buttonPressed(".");
       },
       style: ElevatedButton.styleFrom(
-          backgroundColor: const Color.fromRGBO(49, 49, 49, 1),
+          backgroundColor: const Color.fromRGBO(116,124,124,1),
           minimumSize: const Size.fromRadius(40.0),
           shape: const CircleBorder(),
           padding: const EdgeInsets.all(20)),
       child: const Text(
         ".",
         style: TextStyle(
-          fontSize: 40,
-          fontWeight: FontWeight.bold,
+            fontSize: 40,
+            fontWeight: FontWeight.bold,
             color: Colors.white
         ),
       ),
@@ -398,7 +379,7 @@ class zeroButton extends StatelessWidget {
       height: 80,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color.fromRGBO(49, 49, 49, 1),
+          backgroundColor: const Color.fromRGBO(116,124,124,1),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(100.0),
           ),
@@ -435,7 +416,7 @@ class addButton extends StatelessWidget {
           buttonPressed("+");
         },
         style: ElevatedButton.styleFrom(
-            backgroundColor: const Color.fromRGBO(246,153,6, 1),
+            backgroundColor: const Color.fromRGBO(215,151,94,1),
             minimumSize: const Size.fromRadius(40.0),
             shape: const CircleBorder(),
             padding: const EdgeInsets.all(20)),
@@ -465,7 +446,7 @@ class substractButton extends StatelessWidget {
           buttonPressed("-");
         },
         style: ElevatedButton.styleFrom(
-            backgroundColor: const Color.fromRGBO(246,153,6, 1),
+            backgroundColor: const Color.fromRGBO(215,151,94,1),
             minimumSize: const Size.fromRadius(40.0),
             shape: const CircleBorder(),
             padding: const EdgeInsets.all(20)),
@@ -495,7 +476,7 @@ class multiplyButton extends StatelessWidget {
           buttonPressed("*");
         },
         style: ElevatedButton.styleFrom(
-            backgroundColor: const Color.fromRGBO(246,153,6, 1),
+            backgroundColor: const Color.fromRGBO(215,151,94,1),
             minimumSize: const Size.fromRadius(40.0),
             shape: const CircleBorder(),
             padding:const  EdgeInsets.all(20)),
@@ -525,7 +506,7 @@ class divideButton extends StatelessWidget {
           buttonPressed("/");
         },
         style: ElevatedButton.styleFrom(
-            backgroundColor: const Color.fromRGBO(246,153,6, 1),
+            backgroundColor: const Color.fromRGBO(215,151,94,1),
             minimumSize: const Size.fromRadius(40.0),
             shape: const CircleBorder(),
             padding: const EdgeInsets.all(20)),
@@ -563,7 +544,7 @@ class _iconButtonState extends State<iconButton> {
         widget.buttonPressed(widget.iconName);
       },
       style: ElevatedButton.styleFrom(
-          backgroundColor: const Color.fromRGBO(159,159,159, 1),
+          backgroundColor: const Color.fromRGBO(250,248,245, 1),
           minimumSize: const Size.fromRadius(40.0),
           shape: const CircleBorder(),
           padding: const EdgeInsets.all(20)),
@@ -596,16 +577,16 @@ class _numberButtonState extends State<numberButton> {
         widget.buttonPressed(widget.numberKey);
       },
       style: ElevatedButton.styleFrom(
-          backgroundColor: const Color.fromRGBO(49, 49, 49, 1),
+          backgroundColor: const Color.fromRGBO(116,124,124,1),
           minimumSize: const Size.fromRadius(40.0),
           shape: const CircleBorder(),
           padding: const EdgeInsets.all(20)),
       child: Text(
         widget.numberKey!,
         style: const TextStyle(
-          fontSize: 40,
-          fontFamily: 'Helvetica',
-          color: Colors.white
+            fontSize: 40,
+            fontFamily: 'Helvetica',
+            color: Colors.white
         ),
       ),
     );
@@ -638,4 +619,12 @@ void addCalculationToDatabase(calculation) async {
       'calculations': calculations
     });
   }
+}
+int calculateGCM(int a, int b) {
+  while (b != 0) {
+    int remainder = a % b;
+    a = b;
+    b = remainder;
+  }
+  return a;
 }
