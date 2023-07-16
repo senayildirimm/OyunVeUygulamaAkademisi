@@ -42,7 +42,7 @@ Hesap Makinesi uygulaması, kullanıcı dostu arayüzüyle hızlı ve doğru mat
 * **Sprint içinde tamamlanması tahmin edilen puan:** 100 Puan
 * **Puan tamamlama mantığı:** Toplamda proje boyunca tamamlanması gereken 340 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'in en azından 100 ile başlaması gerektiğine karar verildi.
 * Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözüken kırmızı item'lar yapılacak işleri (task) gösterirken, mavi item'lar story'leri temsil etmektedir.
- * **Daily Scrum:** Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg ve docx olarak Readme'de tarafımızdan paylaşılmaktadır:
+ * **Daily Scrum:** Daily Scrum toplantılarının zamansal sebeplerden ötürü Whatsapp üzerinden yapılmasına karar verilmiştir. Daily Scrum toplantısı örneği jpeg olarak Readme'de tarafımızdan paylaşılmaktadır:
   <p align="center">
   <img width="700" height="1000" src="https://github.com/senayildirimm/OyunVeUygulamaAkademisi/blob/main/Sprint 1 Daily Scrum Chats1.jpeg">
 </p>
@@ -66,7 +66,7 @@ Hesap Makinesi uygulaması, kullanıcı dostu arayüzüyle hızlı ve doğru mat
 
 * **Sprint Retrospective:**
     * Uygulamada giriş ekranının renklerine karar verildi ve temel uia uygun olarak tekrar düzenlendi.
-    * Hesap makinesi için daha özel fonksiyonlar eklendi, trigonometrik ve logaritmik fonksiyon eklemeye karar verildi.
+    * Hesap makinesi için daha özel fonksiyonlar eklendi, logaritmik fonksiyon eklemeye karar verildi.
     * Takım üyelerinin gelecek sprintlerde daha aktif olması gerektiği ortak fikrine varılmıştır.
       
 
@@ -75,9 +75,11 @@ https://miro.com/app/board/uXjVM9s_u0s=/?share_link_id=114702148702
 
 
 # Sprint 2 
+* **Sprint Notları:** User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir.
 **Sprint içinde tamamlanması tahmin edilen puan:** 50 Puan
 * **Puan tamamlama mantığı:** Toplamda proje boyunca tamamlanması gereken 340 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ikinci sprint'in 50 ile devam edilmesine karar verildi.
- * **Daily Scrum:** Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır:
+* * Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözüken kırmızı item'lar yapılacak işleri (task) gösterirken, mavi item'lar story'leri temsil etmektedir.
+ * **Daily Scrum:** Daily Scrum toplantısı örneği jpeg Readme'de tarafımızdan paylaşılmaktadır:
 <p align="center">
   <img width="700" height="1000" src="https://github.com/senayildirimm/OyunVeUygulamaAkademisi/blob/main/Sprint%202%20Daily%20Scrum.jpg">
 </p>
@@ -87,7 +89,6 @@ https://miro.com/app/board/uXjVM9s_u0s=/?share_link_id=114702148702
 <p align="center">
   <img width="1100" height="750" src="https://github.com/senayildirimm/OyunVeUygulamaAkademisi/blob/main/Sprint%202%20Product%20backlog.png">
 </p>
-
 
 
 * **Ürün Durumu:** Ekran görüntüleri:
@@ -112,7 +113,35 @@ https://miro.com/app/board/uXjVM9s_u0s=/?share_link_id=114702148702
   * Takım üyelerinin gelecek sprintlerde daha aktif olması gerektiği ortak fikrine varılmıştır.
   * İki değişkenli denklem çözümü eklenmesine karar verildi.
   * Geçmiş işlemleri kaydının tutulmasına karar verildi.
-  * Trigonometrik ifadeleri eklenmesine karar verildi.
+
     
 # Product Backlog URL
 https://miro.com/app/board/uXjVM9s_u0s=/?share_link_id=114702148702 
+
+
+# Sprint 3 
+* **Sprint Notları:** User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir.
+**Sprint içinde tamamlanması tahmin edilen puan:** 190 Puan
+* **Puan tamamlama mantığı:** Toplamda proje boyunca tamamlanması gereken 340 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde üçüncü sprint'in 190 ile devam edilmesine karar verildi.
+* * Story'ler yapılacak işlere (task'lere) bölünmüştür. Miro Board'da gözüken kırmızı item'lar yapılacak işleri (task) gösterirken, mavi item'lar story'leri temsil etmektedir.
+ * **Daily Scrum:** Daily Scrum toplantısı örneği jpeg veya word olarak Readme'de tarafımızdan paylaşılmaktadır:
+<p align="center">
+  <img width="700" height="1000" src="https://github.com/senayildirimm/OyunVeUygulamaAkademisi/blob/main/Sprint%203%20Daily%20Scrum.jpeg">
+</p>
+
+* **Sprint board update:** Sprint board screenshotları:
+<p align="center">
+  <img width="1100" height="750" src="https://github.com/senayildirimm/OyunVeUygulamaAkademisi/blob/main/Sprint%203%20Product%20backlog.png">
+</p>
+
+
+
+* **Ürün Durumu:** Ekran görüntüleri:
+
+<p align="center">
+  <img width="700" height=1000" src="https://github.com/senayildirimm/OyunVeUygulamaAkademisi/blob/main/Product%206.jpg">
+</p>
+
+
+* **Sprint Review:** Alınan kararlar: Geçmiş işlemleri kaydının tutulmasına işlemi yapıldı. İki değişkenli denklem çözümü eklendi. Dark ve light tema eklendi. Uygulama için logo tasarımı yapıldı. **Sprint Review Katılımcıları :** Takımın tamamı katılmıştır.
+
